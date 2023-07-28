@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>largest value</title>
+</head>
+
+<body>
+    find the second largest , largest and smallest value in array
+</body>
+<script>
+    //find the secondlarge, large, and smallest value in given array
+
+    let arr = [7, 8, 9, 3, 2, 12, 10, 1, 0, 15, 6];
+    let i = 0, smallest = arr[0], seclarge = arr[0], large = arr[0];
+    while (i < arr.length) {
+        if (smallest > arr[i]) {
+            smallest = arr[i];
+        }
+        else if (seclarge < arr[i] && large > arr[i]) {
+            seclarge = arr[i];
+        }
+        else if (large < arr[i]) {
+            seclarge = large;
+            large = arr[i];
+        }
+        i++;
+    }
+
+    console.log(smallest);
+    console.log(seclarge);
+    console.log(large);
+</script>
+
+</html>

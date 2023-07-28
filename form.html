@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Form_validation</title>
+    <link rel="stylesheet" href="f.css">
+</head>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+
+<body>
+    <form action="" name="myForm" onsubmit="return validateForm()" method="GET">
+        <div class="box">
+            Name: <input type="text" name="fname" id="fname" class="str" placeholder="frist_name mid_name surname">
+            <span class="fname_e">swap</span>
+            <p id="p_tag"></p>
+            <br>
+            Select Gender : <input type="radio" name="gender" checked>Male <input type="radio" name="gender">Female
+            <input type="radio" name="gender">Transgender
+            <span class="gender_e"></span>
+            <br>
+            Birth Date: <input class="date" type="date">
+            <span class="bdate_e"></span>
+            <br>
+            Email: <input type="email" class="str" name="email" placeholder="swapnil@gmail.com">
+            <span class="email_e"></span>
+            <br>
+            contact: <input type="number" class="" placeholder="8805073375">
+            <span class="contact_e"></span>
+            <br>
+            Select Department:
+            <select name="department" id="">
+                <option value="">select</option>
+                <option value="Art">Art</option>
+                <option value="Commerce">Commerce</option>
+                <option value="Hocational">Hocational</option>
+                <option value="Science">Science</option>
+                <option value="Computer Sci.">Computer Science</option>
+            </select>
+            <span class="department_e"></span>
+            <br>
+            language:
+            <input type="checkbox" name="English" value="English" checked disabled>English <input type="checkbox"
+                name="Marathi" value="Marathi">Marathi <input type="checkbox" name="Hindi" value="Hindi">Hindi
+            <br>
+            Addresss: <br>
+            <textarea type="text" name="address" placeholder="AT - Nimon Tal-Chandwad Dist-Nashik pincode-423104"
+                cols="20" rows="4"></textarea>
+            <span class="add_e"></span>
+            <br>
+            <button type="reset" class="btn1">RESET</button>
+            <button type="submit" value="submit" class="btn2">SUBMIT</button>
+        </div>
+    </form>
+    <script>
+        function validateForm() {
+            let x = document.forms["myForm"]["fname"].value;
+            if (x != "") {   
+                //document.getElementById('fname_e').innerText=x;
+                b=document.getElementsByClassName("fname_e");  // Find the elements
+    
+    b.innerText="Hello JavaScript!";    // Change the content
+    return false;
+    
+
+                
+            }
+            //let email = document.email.value;
+            // if(email.lenght()<5)
+            // {
+            //     document.getElementsByClassName('email_e').innerText="check email";
+            // }
+        }
+    </script>
+</body>
+
+</html>

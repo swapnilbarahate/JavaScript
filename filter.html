@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>filter</title>
+</head>
+
+<body>
+    <h3>filter function in javaScript</h3>
+</body>
+<script>
+    //filter function vaprun apan condition nusur value kadhu shakato
+    const arr = [5, 4, 6, 8, 3];
+    let output;
+    //Example_1 find the value id greter than 3
+    function greter(x) {
+        return x > 3;
+    }
+    output = arr.filter(greter);
+    console.log("Using first way greter than 3: " + output);
+
+    //second way
+    output = arr.filter((x) => {
+        return x > 3;
+    });
+    console.log("Using second way greter than 3: " + output);
+
+    //third way
+    output = arr.filter((x) => x > 3);
+    console.log("Using third way greter than 3: " + output);
+
+    //Example_2 find the even value in given array
+    function even(x) {
+        return x % 2 == 0;
+    }
+    output = arr.filter(even);
+    console.log("using first way : " + output);
+
+    //second way
+    output = arr.filter((x) => {
+        return x % 2 == 0;
+    });
+    console.log("Using second way : " + output);
+
+    //third way
+    output = arr.filter((x) => x % 2 == 0);
+    console.log("Using third way: " + output);
+
+    //one array stored user information in object format
+    const user = [{
+        firstName: "Swapnil",
+        surName: "Barahate",
+        age: 25
+    }, {
+        firstName: "Shubham",
+        surName: "Pawar",
+        age: 25
+    }, {
+        firstName: "Bhau",
+        surName: "Parekar",
+        age: 28
+    }, {
+        firstName: "Vaibav",
+        surName: "Chavan",
+        age: 27
+    }];
+    //ex3 find the user his age is less than 27
+    // this example retrun the object format out put
+    const ans = user.filter(function(x) {
+        return x.age < 27;
+    });
+    console.log(ans);
+    //ex4 find the only firt name of the user
+    const ans2 = user.filter(function(x) {
+        return x.age < 27;
+    }).map((x) => x.firstName);
+    console.log(ans2);
+</script>
+
+</html>

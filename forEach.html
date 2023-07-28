@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>forEach loop</title>
+    </head>
+    <body>
+        <div>
+            <h1>JavaScript Arrays</h1>
+            <h2>The forEach() Method</h2>
+
+            <p>forEach() calls a function for each element in an array:</p>
+
+            <p id="demo"></p>
+        </div>
+        <div>
+            <form action="">
+                Name: <input type="color" name="" id="">
+            </form>
+        </div>
+    </body>
+    <script>
+        let fruits = ["Apple","Mango","Panapple","Orange","Gawa","Pomogranet"];
+        let text="";
+        fruits.forEach(myFunction);
+        function myFunction(item, index, arr)
+        {
+             text += index+" - "+ item + "------------- array is: ["+ arr + "]<br>";
+            document.getElementById("demo").innerHTML= text;
+        }
+    </script>
+</html>

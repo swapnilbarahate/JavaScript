@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inheritance</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="paragraph">
+        <h2>Inheritance:</h2> The JavaScript inheritance is a mechanism that allows us to create new classes on the
+        basis of already existing classes. It provides flexibility to the child class to reuse the methods and variables
+        of a parent class.
+
+        The JavaScript extends keyword is used to create a child class on the basis of a parent class. It facilitates
+        child class to acquire all the properties and behavior of its parent class.
+
+
+        <br>
+        Points to remember:
+        <ul>
+            <option value="">It maintains an IS-A relationship.</option>
+            <option value="">The extends keyword is used in class expressions or class declarations.</option>
+            <option value="">Using extends keyword, we can acquire all the properties and behavior of the inbuilt object
+                as well as custom classes.</option>
+            <option value="">We can also use a prototype-based approach to achieve inheritance.</option>
+        </ul>
+
+    </div>
+
+</body>
+<script>
+    // Inheritance example
+    class person {
+        constructor(name) {
+            this.name = name;
+        }
+        // method to return the string
+        toString() {
+            return (`Name of person: ${this.name}`);
+        }
+    }
+    class student extends person {
+        constructor(name, id) {
+            // super keyword for calling the above 
+            // class constructor
+            super(name);
+            this.id = id;
+        }
+        toString() {
+            return (`${super.toString()},
+            Student ID: ${this.id}`);
+        }
+    }
+    let student1 = new student('Mukul', 22);
+    console.log(student1.toString());
+</script>
+<script>
+    //Constructor function  
+    function Bike(company) {
+        this.company = company;
+    }
+
+    Bike.prototype.getCompany = function () {
+        return this.company;
+    }
+    //Another constructor function  
+    function Vehicle(name, price) {
+        this.name = name;
+        this.price = price;
+    }
+    var bike = new Bike("Honda");
+    Vehicle.prototype = bike; //Now Bike treats as a parent of Vehicle.  
+    var vehicle = new Vehicle("Shine", 70000);
+    document.writeln(vehicle.getCompany() + " " + vehicle.name + " " + vehicle.price);
+</script>
+
+</html>

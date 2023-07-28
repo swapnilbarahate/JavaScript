@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3> The getData() function is called its arguments and the callback is executed after the completion of getData() function. </h3>
+
+    <textarea>
+        A callback function can be defined as a function passed into another function as a parameter. Don't relate the callback with the keyword, as the callback is just a name of an argument that is passed to a function.
+
+In other words, we can say that a function passed to another function as an argument is referred to as a callback function. The callback function runs after the completion of the outer function. It is useful to develop an asynchronous JavaScript code.
+
+In JavaScript, a callback is easier to create. That is, we simply have to pass the callback function as a parameter to another function and call it right after the completion of the task. Callbacks are mainly used to handle the asynchronous operations such as the registering event listeners, fetching or inserting some data into/from the file, and many more.
+
+Now, let's see how to create a callback by using some illustrations.
+
+It is an example of an asynchronous callback. Asynchronicity can be defined as if JavaScript has to wait to complete the operation and execute the rest of the program during waiting.
+    </textarea>
+    <input type="number"  id="A">
+    <input type="number"  id="B">
+    <button onclick="showData()">cal</button>
+    <p id="ans">0</p>
+</body>
+
+<script>
+    //first example
+    // function
+function greet(name, callback) {
+    console.log('Hi' + ' ' + name);
+    callback();
+}
+
+// callback function
+function callMe() {
+    console.log('I am callback function');
+}
+
+// passing function as an argument
+greet('Swapnil', callMe);
+    
+
+//second example
+setTimeout(function(){
+    console.log("timer function is exicuted")
+},5000);
+
+function A(B)
+{
+    console.log("funcition A is exicuted");
+    B();
+}
+
+A(function B(){
+    console.log("function B is exicuted");
+});
+let y = prompt("Enter the string");
+console.log(y);
+if(typeof(y)=== "string")
+{
+    y = Number(y);
+    console.log(typeof(y));
+}
+else
+{
+    console.log("It is string");
+}
+</script>
+</html>

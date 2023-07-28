@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>range</title>
+</head>
+<script>
+    function nearestValue() {
+        let num = document.getElementById("ip").value;
+        let ans = (num <= 40) ? (((num % 5) <= 2.5) ? ((num / 5) * 5) - (num % 5) : (((num / 5) * 5) + 5) - (num % 5)) : (((num % 10) < 1) ? (num / 10) * 10 : (((num / 10) * 10) + 10) - (num % 10));
+        document.getElementById("op").innerHTML = parseInt(ans);
+    }
+</script>
+<style>
+    div {
+        align-content: center;
+        color: green;
+    }
+    
+    span {
+        color: red;
+    }
+</style>
+
+<body>
+    <div>
+        <h2>check given number nearest value is divisible by 5</h2>
+        Enter Number <input type="text" id="ip" value="5">
+        <button type="button" onclick="nearestValue()">check</button>
+        <br>
+        <h3>Nearest Value is: <span id="op"></span> </h3>
+    </div>
+</body>
+
+</html>

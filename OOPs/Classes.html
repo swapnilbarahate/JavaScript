@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="paragraph">
+        <h2>Object:</h2><span> An Object is a unique entity that contains properties and methods.Classes are blueprints
+            of an Object.</span>
+        A class can have many Objects because the class is a template while Objects
+        are instances of the class or the concrete implementation.
+        Before we move further into implementation, we should know unlike other Object Oriented languages there are no
+        classes in JavaScript we have only Object. To be more precise, JavaScript is a prototype-based Object Oriented
+        Language, which means it doesn’t have classes, rather it defines behaviors using a constructor function and then
+        reuses it using the prototype.
+        <br>
+        Classes are in fact "special functions", and just as you can define function expressions and function
+        declarations, a class can be defined in two ways: or a class declaration.
+        <ul>
+            <option value=""> a class expression or</option>
+            <option value="">class declaration</option>
+        </ul>
+
+    </div>
+
+</body>
+<script>
+    // Defining class using es6
+    class Vehicle {
+        constructor(name, maker, engine) {
+            this.name = name;
+            this.maker = maker;
+            this.engine = engine;
+        }
+        getDetails() {
+            return (`The name of the bike is ${this.name}.`)
+        }
+    }
+    // Making object with the help of the constructor
+    let bike1 = new Vehicle('Hayabusa', 'Suzuki', '1340cc');
+    let bike2 = new Vehicle('Ninja', 'Kawasaki', '998cc');
+
+    console.log(bike1.name);    // Hayabusa
+    console.log(bike2.maker);   // Kawasaki
+    console.log(bike1.getDetails());
+</script>
+<script>
+    // Defining class in a Traditional Way.
+    function Vehicle(name, maker, engine) {
+        this.name = name,
+            this.maker = maker,
+            this.engine = engine
+    };
+
+    Vehicle.prototype.getDetails = function () {
+        console.log('The name of the bike is ' + this.name);
+    }
+
+    let bike1 = new Vehicle('Hayabusa', 'Suzuki', '1340cc');
+    let bike2 = new Vehicle('Ninja', 'Kawasaki', '998cc');
+
+    console.log(bike1.name);
+    console.log(bike2.maker);
+    console.log(bike1.getDetails());
+</script>
+<script>
+    //example class declaration
+    //Declaring class
+    class Employee {
+        //Initializing an object
+        constructor(id, name) {
+            this.id = id;
+            this.name = name;
+        }
+        //Declaring method
+        detail() {
+            document.writeln(this.id + " " + this.name + "<br>")
+        }
+    }
+    //passing object to a variable 
+    var e1 = new Employee(101, "Martin Roy");
+    var e2 = new Employee(102, "Duke William");
+    e1.detail(); //calling method
+    e2.detail();
+</script>
+<script>
+    //example Class Expresion
+    //Declaring class
+    var emp = class {
+                //Initializing an object
+                constructor(id, name) {
+                        this.id = id;
+                        this.name = name;
+                    }
+                    //Declaring method    
+                detail() {
+                    document.writeln(this.id + " " + this.name + "<br>")
+                }
+            }
+            //passing object to a variable 
+        var e1 = new emp(101, "Martin Roy");
+        var e2 = new emp(102, "Duke William");
+        e1.detail(); //calling method
+        e2.detail();
+
+        //Re-declaring class
+        var emp = class {
+                //Initializing an object
+                constructor(id, name) {
+                    this.id = id;
+                    this.name = name;
+                }
+                detail() {
+                    document.writeln(this.id + " " + this.name + "<br>")
+                }
+            }
+            //passing object to a variable 
+        var e1 = new emp(103, "James Bella");
+        var e2 = new emp(104, "Nick Johnson");
+        e1.detail(); //calling method
+        e2.detail();
+</script>
+
+</html>

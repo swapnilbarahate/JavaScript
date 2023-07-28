@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reduce</title>
+</head>
+
+<body>
+    <h3>reduce function in javaScript</h3>
+</body>
+<script>
+    //filter function vaprun apan condition nusur value kadhu shakato
+    const arr = [5, 4, 6, 8, 3];
+    let output;
+    //Example_1 find the value id max/sum
+    function findMax(x) {
+        let max = x[0];
+        let second_max = x[0];
+        let op = [];
+        for (let i = 0; i < x.length; i++) {
+            if (x[i] > max) {
+                second_max = max;
+                max = x[i];
+            }
+        }
+        op.push(max);
+        op.push(second_max);
+        return op;
+    }
+    output = findMax(arr);
+    console.log("Simple Logic array Max and second_max : " + output);
+
+    //second way
+    output = arr.reduce((max, current) => { //max and current name tepory variable name ahe
+        if (current > max) {
+            max = current;
+        }
+        return max;
+    }, arr[0]); //max and secMax madhe default zero value pass keli ahe
+    console.log("Using reduce array Max : " + output)
+
+    //one array stored user information in object format
+    const user = [{
+        firstName: "Swapnil",
+        surName: "Barahate",
+        age: 25
+    }, {
+        firstName: "Shubham",
+        surName: "Pawar",
+        age: 25
+    }, {
+        firstName: "Bhau",
+        surName: "Parekar",
+        age: 28
+    }, {
+        firstName: "Vaibav",
+        surName: "Chavan",
+        age: 27
+    }];
+
+    //ex2 find age wise cout
+    //ans=[25:2,27:1,28:1]
+    const ans = user.reduce((acc, curr) => {
+        if (acc[curr.age]) {
+            acc[curr.age] = ++acc[curr.age];
+        } else {
+            acc[curr.age] = 1;
+        }
+        return acc;
+    }, {}); //ethe empty object pass kela ahe 
+    console.log(ans);
+</script>
+
+</html>

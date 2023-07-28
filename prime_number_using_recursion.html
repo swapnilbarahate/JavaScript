@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h3>Prime number check using recurtion</h3>
+</body>
+<script>
+    let num;
+    let flag=0;
+    let diviser=2;
+    
+    num = prompt("Enter the number:",num);
+    num = Number(num); 
+    function checkPrime(diviser)
+    {
+        
+        if(num%diviser!=0 && diviser<=num/2 && flag==0)
+        {
+            checkPrime(diviser++);
+        }
+        else if(num%diviser===0)
+        {
+            flag =1;
+        }
+      return flag;  
+    }
+    flag = checkPrime(diviser);
+    if(flag==0)
+    {
+        console.log("prime");
+    }
+    else{
+        console.log("Not peime");
+    }
+</script>
+
+<!-- second way -->
+<script>
+    let n = 10
+let count = 1;
+let div = n/2;
+const checkPrime =  async(num, div) =>{
+    if(div == 2){
+        return count;
+    }
+    if(num%div==0){
+        count+=1;
+    }
+ return await checkPrime(num, div-1);
+}
+let func = async(n) =>{
+    let data = await checkPrime(10, 5);
+
+if(data > 1){
+    console.log("number is not prime:")
+}else{
+        console.log("number is prime:");
+   
+}
+
+}
+</script>
+</html>

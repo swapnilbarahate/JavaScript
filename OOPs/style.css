@@ -1,0 +1,12 @@
+.paragraph{
+    
+    width: 50%;
+    text-align: left;
+    font-size: 18px;
+  font-family: 'sans-serif';
+}
+span{
+    font-size: 18px;
+  font-family: 'sans-serif';
+  font-weight: bold;
+}

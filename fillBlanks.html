@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<style>
+    .btn{
+        background-color: #3e7bff; /*blue*/
+        border: none;
+        border-radius: 3px;
+        color: white;
+        padding: 4px 8px;
+        text-align: center;
+        font-size: 16px;
+        transition-duration: 0.4s;
+        cursor: pointer;
+    }
+    .btn:hover {
+  background-color: white;
+  color: black;
+  border-style : solid ;
+  
+}
+input{
+    border-top: none;
+    border-right: none;
+    border-left:none;
+    border: bottom 1px;;
+}
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <title>Fill in the blanks</title>
+        Q.1)<p id="input">The <span>---</span> key is can not be <span>---</span> it is combination of not null & <span>---</span></p>
+        <ol>
+            <li>unique</li>
+            <li>not null</li>
+            <li>primary</li>
+            <li>foregain</li>
+        </ol>
+        <button class="btn" onclick="validate()">check</button>
+        <p id="op"></p>
+    </div>
+</body>
+<script>
+    // let str = document.getElementById("input").innerText;
+    let str ="The [[1]] key can not be [[0]] it is combination of not nulll & [[2]]";
+    let anskye =[
+            {
+                ans:"null", 
+                istrue: false
+            },
+            {
+                ans:"unique", 
+                istrue: false
+            },
+            {
+                ans:"primary", 
+                istrue: false
+            }
+            ];
+        let i=0;
+        let temp=0;
+        let l= str.split(" ");
+        function validate()
+        {
+            
+            while(i<l.length)
+            {
+                if((l[i][0]=="[" && l[i][1]=="[")&& anskye[temp].istrue==false)
+                {
+                    l[i]=("<span style='color:red;'>"+anskye[temp].ans+"</span>");
+                    temp++;
+                }
+                else if(l[i][0]=="[" && l[i][1]=="[")
+                {
+                    l[i]=("<span style='color:green;'>"+anskye[temp].ans+"</span>");
+                    temp++;
+                }
+                i++;
+            }
+            str= l.join(" ");
+            document.getElementById("op").innerHTML=str;
+        }
+</script>
+</html>

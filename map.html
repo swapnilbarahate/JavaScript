@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Map</title>
+</head>
+
+<body>
+    <h3>map function in javaScript</h3>
+</body>
+<script>
+    //map function vaprun apan mathematical operation karu shakto
+    //transformation of array usint map function
+    const arr = [5, 4, 6, 8, 3];
+    //op duble =[10,8,12,16,6]
+    //op triple =[15,12,18,24,9]
+    //op binary =['0101', '0100', '0110', '1000', '0011']
+    function double(x) {
+        return x * 2
+    }
+    let output = arr.map(double);
+    console.log(output);
+    //second way
+    output = arr.map((x) => {
+        return x * 2;
+    });
+    console.log(output);
+
+
+    function triple(x) {
+        return x * 3;
+    }
+    output = arr.map(triple);
+    console.log(output);
+
+    function binary(x) {
+        return x.toString(2);
+    }
+    output = arr.map(binary);
+    console.log(output);
+
+    //second way
+    output = arr.map((x) => x.toString(2));
+    console.log(output);
+</script>
+<script>
+    //one array stored user information in object format
+    const user = [{
+        firstName: "Swapnil",
+        surName: "Barahate",
+        age: 25
+    }, {
+        firstName: "Shubham",
+        surName: "Pawar",
+        age: 25
+    }, {
+        firstName: "Bhau",
+        surName: "Parekar",
+        age: 28
+    }, {
+        firstName: "Vaibav",
+        surName: "Chavan",
+        age: 27
+    }];
+    // ex1 List the full name
+    const ans = user.map((x) => x.firstName + " " + x.surName);
+    console.log(ans);
+</script>
+
+</html>

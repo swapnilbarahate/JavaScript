@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div>
+        <h4>String revese but not change the space position in string</h4>
+        <p>Ex. str="abcd efg"</p>
+        <p>output ="gfed cba</p>
+        <br>
+        Enter the string: <input type="text" id="userInput" onchange="stringRevese(this.value)" placeholder="Enter strig" value="">
+        <br>
+        Orignal string is: <span id="original"></span><br>
+        Reverse string is: <span id="reverse"></span>
+    </div>
+</body>
+<script>
+    function stringRevese(str)
+    {
+        
+        let original = str;
+        let reverse = str;
+        reverse = reverse.split("");
+        document.getElementById("original").innerText= original
+        let i=0, j= (reverse.length)-1;
+        while(i<=j)
+        {
+            if(reverse[i]!=" " && reverse[j]!=" ")
+            {
+                swap(i,j,reverse);
+                i++;
+                j--;
+            }
+            else if(reverse[i]==" " && reverse[j]!=" ")
+            {
+                i++;
+            }
+            else if(reverse[i]!=" " && reverse[j]==" ")
+            {
+                j--;
+            }
+        }
+        reverse= reverse.join("");
+        document.getElementById("reverse").innerText= reverse
+
+    }
+    function swap(i,j,reverse)
+    {
+        temp= reverse[i];
+        reverse[i]= reverse[j];
+        reverse[j]= temp;
+    }
+    </script>
+    </html>
