@@ -14,3 +14,7 @@ function decimalToOctal(decimal){
 }
 let octal = decimalToOctal(decimal);
 console.log(octal);
+
+//i/p:8 o/p:10
+//i/p:7 o/p:7
+//i/p:10 o/p:12
